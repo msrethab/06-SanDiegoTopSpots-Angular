@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app ="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>San Diego Top Spots - Angular</title>
+
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- Importing jquery and AngularJS-->
+
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <!-- Initializing Bootstrap -->
+
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+    <!-- Linking external style sheets -->
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body ng-controller="MainController">
+
+	<!-- Creating a title Header -->
+
+    <header>
+        <h1>San Diego Top Spots (now with 100% more Angular)</h1>
+    </header>
+
+	<div class="container">
+
+        <!-- Create Table object with head labels and empty body -->
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-md-2">Name</th>
+                    <th class="col-md-8">Description</th>
+                    <th class="col-md-2">Link</th>
+                </tr>
+            </thead>
+
+            <!-- Binding topspots data from the main controller and repeating the data into the table rows -->
+
+            <tbody id="dataTable">
+            	<tr ng-repeat="data in topspots">
+            		<td>{{data.name}}</td>
+            		<td>{{data.description}}</td>
+            		<td><a ng-href="https://www.google.com/maps?q={{data.location[0] + ',' + data.location[1]}}" target="_blank" class="btn btn-primary active" role="button">Link to Google Maps</a></td>
+            	</tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Create a copyright footer -->
+
+    <footer class="centFooter">
+        <p>&copy; 2016 Mark Srethabhakti.</p>
+    </footer>
+
+	<!-- Running external javaScript with jQuery and AngularJS elements -->
+
+    <script src="app.js"></script>
+    <script src="main.controller.js"></script>
+
+</body>
+</html>
