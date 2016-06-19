@@ -13,13 +13,15 @@
     /* @ngInject */
     function MainFactory($http) {
         var service = {
-            getTopSpot: getTopSpot
+            getTopSpots: getTopSpots,
+            addTopSpot: addTopSpot,
+            deleteTopSpot: deleteTopSpot
         };
         return service;
 
         ////////////////
 
-        function getTopSpot() {
+        function getTopSpots() {
             return $http({
                 method: 'GET',
                 url: '../topspots.json'
@@ -28,6 +30,20 @@
                 return response.data;
 
             });
+
+        }
+
+        function addTopSpot(topSpots, topSpotName, topSpotDesc, topSpotLat, topSpotLong){
+
+            var topSpotLocation = [topSpotLat, topSpotLong];
+            var topSpot = {name: topSpotName, description: topSpotDesc, location: topSpotLocation};
+            return topSpots.push(topSpot);
+
+        }
+
+        function deleteTopSpot(topSpots, index){
+
+            return topSpots.splice(index, 1);
 
         }
     }

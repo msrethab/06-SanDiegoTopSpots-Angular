@@ -12,10 +12,18 @@ h1{
   text-align: center;
 }
 
+.delete{
+  margin-top: 10px;
+}
+
 /* Styling the modal form */
 
 .form-group div {
   margin-bottom: 2.5%;
+}
+
+.modalSubmit{
+  margin-top: 12px;
 
 }
 
@@ -33,6 +41,10 @@ h1{
 .container {
   margin-bottom: 2.5%;
   width: 80%;
+}
+
+.linkHeading{
+  text-align: center;
 }
 
 /* Styling the footer */

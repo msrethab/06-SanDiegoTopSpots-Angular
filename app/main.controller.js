@@ -8,12 +8,14 @@
         .module('myApp')
         .controller('MainController', MainController);
 
-    MainController.$inject = ['$http', 'MainFactory'];
+    MainController.$inject = ['$http', 'MainFactory', '$scope'];
 
     /* @ngInject */
-    function MainController($http, MainFactory) {
+    function MainController($http, MainFactory, $scope) {
         var vm = this;
         vm.title = 'MainController';
+        vm.addTopSpot = addTopSpot;
+        vm.deleteTopSpot = deleteTopSpot;
 
         activate();
 
@@ -21,12 +23,21 @@
 
         function activate() {
 
-            MainFactory.getTopSpot()
+            MainFactory.getTopSpots()
 				.then(function(response) {
 
                 vm.topspots = response;
 
             })
+
+        }
+
+        function addTopSpot(topSpotName, topSpotDesc, topSpotLat, topSpotLong){
+        	MainFactory.addTopSpot(vm.topspots, topSpotName, topSpotDesc, topSpotLat, topSpotLong);
+        }
+
+        function deleteTopSpot($index){
+            MainFactory.deleteTopSpot(vm.topspots, $index);
 
         }
     }
