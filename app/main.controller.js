@@ -21,6 +21,8 @@
 
         ////////////////
 
+        //Defining activation function to get top spots from JSON on load
+
         function activate() {
 
             MainFactory.getTopSpots()
@@ -32,6 +34,8 @@
 
         }
 
+        //Calling custom factory functions to add and delete top spots
+
         function addTopSpot(topSpotName, topSpotDesc, topSpotLat, topSpotLong){
         	MainFactory.addTopSpot(vm.topspots, topSpotName, topSpotDesc, topSpotLat, topSpotLong);
         }
@@ -42,3 +46,5 @@
         }
     }
 })();
+
+//Reviewed by: JK and MS

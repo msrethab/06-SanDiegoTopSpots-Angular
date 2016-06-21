@@ -7,3 +7,6 @@
     angular
         .module('myApp', []);
 })();
+
+
+//Reviewed by: JK and MS

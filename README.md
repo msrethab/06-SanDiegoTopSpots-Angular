@@ -28,3 +28,12 @@ Version 1.0.2
 
 -Added Gulp file and Bower injection points for easy dependency injection
 
+
+
+Version 1.0.3
+
+-Fixed a bug that would cause deleteTopSpots to remove the 0 index of the topspots array instead of the selected topspot
+
+-Added additional comments for better documentation
+
+-Code Reviewed by Jack Kuhry

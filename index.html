@@ -29,7 +29,6 @@
         <h1>San Diego Top Spots (now with 100% more Angular)</h1>
     </header>
     
-
     <div class="button">
         <button ng-click="showModal= !showModal" class="btn btn-primary">Enter in your Top Spots!</button>
     </div>
@@ -57,7 +56,7 @@
             		<td>{{data.description}}</td>
             		<td class="button">
                         <a ng-href="https://www.google.com/maps?q={{data.location[0] + ',' + data.location[1]}}" target="_blank" class="btn btn-primary active" role="button">Open in Google Maps</a>
-                        <a href="" ng-click="vm.deleteTopSpot(vm.topspots, $index)"  class="delete">delete</a>
+                        <a href="" ng-click="vm.deleteTopSpot($index)"  class="delete">delete</a>
                     </td>
             	</tr>
             </tbody>
@@ -78,3 +77,5 @@
 <!-- endinject -->
 </body>
 </html>
+
+<!-- Reviewed by: JK MS -->

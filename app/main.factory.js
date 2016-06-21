@@ -21,6 +21,8 @@
 
         ////////////////
 
+        //Defining functions to Get, add and delete top spots
+
         function getTopSpots() {
             return $http({
                 method: 'GET',
@@ -49,5 +51,4 @@
     }
 })();
 
-
-    
+//Reviewed by: JK and MS
